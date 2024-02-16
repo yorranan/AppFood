@@ -35,6 +35,10 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'itens',
+    loadChildren: () => import('./itens/itens.module').then( m => m.ItensPageModule)
+  },
 ];
 
 @NgModule({
