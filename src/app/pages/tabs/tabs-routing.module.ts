@@ -33,11 +33,15 @@ const routes: Routes = [
         redirectTo: '/tabs/home',
         pathMatch: 'full',
       },
+      {
+        path: 'restaurants/:restaurantId',
+        loadChildren: () => import('./items/items.module').then((m) => m.ItemsPageModule)
+      }
     ],
   },
   {
-    path: 'itens',
-    loadChildren: () => import('./itens/itens.module').then( m => m.ItensPageModule)
+    path: 'items',
+    loadChildren: () => import('./items/items.module').then( m => m.ItemsPageModule)
   },
 ];
 
