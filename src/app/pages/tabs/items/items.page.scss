@@ -28,7 +28,7 @@ ion-item{
         }
     }
     ion-row{
-        border: 1px solid var(--icon-color-medium);
+        border: 1px solid var(--icon-color-primary);
         border-radius: 2px;
         padding: 0.3rem;
     }
@@ -47,4 +47,16 @@ ion-list-header{
 ion-text{
     font-size: 0.8rem;
     margin-top: 0.2rem;
+}
+
+ion-footer{
+    h4{margin-left: 3%;}
+    p{
+        margin-left: 3%;
+        font-size: 0.7rem !important;
+        letter-spacing: 0.5px;
+    }
+    ion-button{
+        color: white;
+    }
 }

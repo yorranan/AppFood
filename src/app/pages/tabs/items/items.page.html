@@ -75,15 +75,31 @@
           <p class="ion-text-wrap">{{item?.desc}}</p>
           <ion-text><p>R$: {{item.price}}</p></ion-text>
         </ion-label>
-        <!-- <ion-row>
+        <ion-row *ngIf="!item?.quantity || item?.quantity <= 0" (click)="quantityPlus(item, i)">
           <ion-text class="ion-padding-horizontal" color="success">Adicionar</ion-text>
-        </ion-row> -->
-        <ion-row>
-          <ion-icon color="success" name="remove-outline"></ion-icon>
-          <ion-text class="ion-padding-horizontal quantity" color="sucess">1</ion-text>
-          <ion-icon color="success" name="add-outline"></ion-icon>
+        </ion-row>
+        <ion-row *ngIf="item?.quantity > 0" >
+          <ion-icon color="success" name="remove-outline" (click)="quantityMinus(item, i)"></ion-icon>
+          <ion-text class="ion-padding-horizontal quantity" color="sucess">{{item.quantity}}</ion-text>
+          <ion-icon color="success" name="add-outline" (click)="quantityPlus(item, i)"></ion-icon>
         </ion-row>
       </ion-item>
     </ng-container>
   </ion-row>
 </ion-content>
+<ion-footer *ngIf="cartData?.totalItem > 0">
+  <ion-toolbar color="success">
+    <ion-label color="light">
+      <ion-text >
+      <h4>{{cartData?.totalItem}} Item <span *ngIf="cartData?.totalItem > 1"></span></h4>
+      <h4>{{cartData?.totalPrice}} Total </h4>
+        Taxas estras podem ser incluídas
+      </ion-text>
+    </ion-label>
+    <ion-button slot="end" fill="clear" (click)="viewCart()">
+      <ion-icon slot="end" name="basket-outline">
+      </ion-icon>
+      Salvar
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
