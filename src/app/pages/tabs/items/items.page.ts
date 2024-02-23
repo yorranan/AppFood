@@ -217,9 +217,8 @@ export class ItemsPage implements OnInit {
   }
 
   async viewCart() {
-    if (this.cartData.items && this.cartData.items.length > 0)
-      await this.saveToCart();
-    this.router.navigate([this.router.url + 'cart']);
+    if (this.cartData.items && this.cartData.items.length > 0) await this.saveToCart();
+    this.router.navigate([this.router.url + '/cart']);
   }
 
   getCuisine(cuisine) {

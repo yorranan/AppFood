@@ -37,42 +37,51 @@
     <ion-input type="text" placeholder="Vamos fazer o nosso melhor"></ion-input>
   </ion-item>
 
-  <ion-list>
-    <ion-list-header>
-      <ion-label color="tertiary"><h5>Detalhes</h5></ion-label>
-    </ion-list-header>
-    <ion-item lines="none">
-      <ion-label>Total:</ion-label>
-      <ion-text slot="end" color="dark">R$: {{model?.deliverycharge}}</ion-text>
-    </ion-item>
-    <ion-list-header>
-      <ion-label color="tertiary"><h5>Total a pagar</h5></ion-label>
-    </ion-list-header>
-    <ion-item lines="none">
-      <ion-label>Total:</ion-label>
-      <ion-text slot="end" color="dark">R$: {{model?.grandTotal}}</ion-text>
-    </ion-item>
-  </ion-list>
+  <ion-list> 
+    <ion-list-header> 
+      <ion-label color="tertiary"><h5>Detalhes</h5></ion-label> 
+    </ion-list-header> 
+    <ion-item lines="none"> 
+      <ion-label>Total:</ion-label> 
+      <ion-text slot="end" color="dark">R$: {{model?.totalPrice}}</ion-text> 
+    </ion-item> 
+    <ion-item lines="none"> 
+      <ion-label>Entrega:</ion-label> 
+      <ion-text slot="end" color="dark">R$: {{model?.deliverycharge}}</ion-text> 
+    </ion-item> 
+    <ion-item lines="none"> 
+      <ion-label>Total a pagar:</ion-label> 
+      <ion-text slot="end" color="dark"><h5>R$: 
+{{model?.grandTotal}}</h5></ion-text> 
+    </ion-item> 
+  </ion-list> 
 
 </ion-content>
-  <ion-footer>
-    <ion-toolbar>
-      <ion-item lines="none">
-        <ion-button slot="end" fill="clear" (click)="changeAddress()">Trocar</ion-button>
-        <ion-icon slot="start" name="home-outline"></ion-icon>
-        <ion-label>
-          <h5>Entregar</h5>
-          <ion-text><p>Rua Fulano de Tal, 212</p></ion-text>
-        </ion-label>
-      </ion-item>
-      <ion-row>
-        <ion-col size="6" class="ion-no-padding"><h6>R$: {{model?.grandTotal}}</h6>
-        <ion-text color="secondary">Ver detalhes</ion-text>
-        <ion-icon name="chevron-down-outline"></ion-icon>
-        </ion-col>
-        <ion-col size="6" class="ion-text-center">
-          <ion-button color="success"> Realizar Pagamento </ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-toolbar>
-</ion-footer>
+
+<ion-footer> 
+  <ion-toolbar> 
+    <ion-item lines="none"> 
+      <ion-button slot="end" fill="clear" 
+(click)="changeAddress()">Trocar</ion-button> 
+      <ion-icon slot="start" name="home-outline"></ion-icon> 
+      <ion-label> 
+        <h5>Entregar em CASA</h5> 
+        <ion-text><p>Andrade Neves, 1456</p></ion-text> 
+      </ion-label> 
+    </ion-item> 
+    <ion-row> 
+      <ion-col size="6" class="ion-no-padding"> 
+        <ion-item lines="none" color="light" class="ion-no-padding"> 
+          <ion-label> 
+            <h6>R$: {{model?.grandTotal}}</h6> 
+            <ion-text color="secondary">Ver detalhes</ion-text> 
+            <ion-icon name="chevron-down-outline"></ion-icon> 
+          </ion-label> 
+        </ion-item> 
+      </ion-col> 
+      <ion-col size="6" class="ion-text-center"> 
+        <ion-button color="success">Realizar Pagamento</ion-button> 
+      </ion-col> 
+    </ion-row> 
+  </ion-toolbar> 
+</ion-footer> 
