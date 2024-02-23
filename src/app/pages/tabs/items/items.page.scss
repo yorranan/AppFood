@@ -1,5 +1,5 @@
 .dashedBorderBottom{
-    border-bottom: 1px dashed var(--icon-color-medium);
+    border-bottom: 1px dashed var(--ion-color-medium);
     padding-bottom: 1.5vh;
     margin-bottom: 1vh;
 }
@@ -28,7 +28,7 @@ ion-item{
         }
     }
     ion-row{
-        border: 1px solid var(--icon-color-primary);
+        border: 1px solid var(--ion-color-medium);
         border-radius: 2px;
         padding: 0.3rem;
     }
@@ -46,7 +46,9 @@ ion-list-header{
 
 ion-text{
     font-size: 0.8rem;
-    margin-top: 0.2rem;
+    p{
+        margin-top: 0.2rem;
+    }
 }
 
 ion-footer{
@@ -57,6 +59,7 @@ ion-footer{
         letter-spacing: 0.5px;
     }
     ion-button{
+
         color: white;
     }
 }

@@ -22,6 +22,7 @@ export class ItemsPage implements OnInit {
       uid: 'dh1',
       cover: 'assets/imgs/img1.jpeg',
       name: 'Dom Henrique 1',
+      address:'Gorpa City',
       short_name: 'domhenrique1',
       cuisines: ['Almoço', 'Café', 'Hamburguer'],
       rating: 5,
@@ -218,7 +219,7 @@ export class ItemsPage implements OnInit {
   async viewCart() {
     if (this.cartData.items && this.cartData.items.length > 0)
       await this.saveToCart();
-    // this.router.navigate([this.router.url + 'cart']);
+    this.router.navigate([this.router.url + 'cart']);
   }
 
   getCuisine(cuisine) {
